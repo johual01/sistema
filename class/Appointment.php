@@ -4,7 +4,7 @@
 
 class Appointment
 {
-	public $base_url = 'http://localhost/tutorial/doctor-appointment-management-system/';
+	public $base_url = 'http://localhost/sistema/';
 	public $connect;
 	public $query;
 	public $statement;
