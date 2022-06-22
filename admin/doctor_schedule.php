@@ -324,7 +324,7 @@ $(document).ready(function(){
 
 	        	$('#action').val('Edit');
 
-	        	$('#submit_button').val('Edit');
+	        	$('#submit_button').val('Editar');
 
 	        	$('#doctor_scheduleModal').modal('show');
 
