@@ -4,7 +4,7 @@
 
 class Appointment
 {
-	public $base_url = 'http://localhost/sistema/admin/';
+	public $base_url = 'http://localhost/sistema/';
 	public $connect;
 	public $query;
 	public $statement;
