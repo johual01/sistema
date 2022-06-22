@@ -66,7 +66,7 @@ include('header.php');
                                             <th>Fecha de la cita</th>
                                             <th>Hora de la cita</th>
                                             <th>Día de la cita</th>
-                                            <th>Estado de la vista</th>
+                                            <th>Estado de la cita</th>
                                             <th>Vista</th>
                                         </tr>
                                     </thead>
@@ -94,7 +94,7 @@ include('header.php');
                 <div class="modal-footer">
                     <input type="hidden" name="hidden_appointment_id" id="hidden_appointment_id" />
                     <input type="hidden" name="action" value="change_appointment_status" />
-                    <input type="submit" name="save_appointment" id="save_appointment" class="btn btn-primary" value="Save" />
+                    <input type="submit" name="save_appointment" id="save_appointment" class="btn btn-primary" value="Guardar" />
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                 </div>
             </div>

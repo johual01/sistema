@@ -339,10 +339,10 @@ $(document).ready(function(){
 	$(document).on('click', '.status_button', function(){
 		var id = $(this).data('id');
     	var status = $(this).data('status');
-		var next_status = 'Active';
-		if(status == 'Active')
+		var next_status = 'Activo';
+		if(status == 'Activo')
 		{
-			next_status = 'Inactive';
+			next_status = 'Inactivo';
 		}
 		if(confirm("Estás seguro de que deseas cambiarlo a "+next_status+"?"))
     	{
