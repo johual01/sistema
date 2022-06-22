@@ -39,7 +39,7 @@ if(isset($_POST["action"]))
 
 		if($object->row_count() > 0)
 		{
-			$error = '<div class="alert alert-danger">Email Address Already Exists</div>';
+			$error = '<div class="alert alert-danger">El correo ya se encuentra registrado</div>';
 		}
 		else
 		{
@@ -81,18 +81,18 @@ if(isset($_POST["action"]))
 			$mail->AddAddress($_POST["patient_email_address"]);
 			$mail->WordWrap = 50;
 			$mail->IsHTML(true);
-			$mail->Subject = 'Verification code for Verify Your Email Address';
+			$mail->Subject = 'Codigo de Verificación para verificar tu correo electrónico';
 
 			$message_body = '
-			<p>For verify your email address, Please click on this <a href="'.$object->base_url.'verify.php?code='.$patient_verification_code.'"><b>link</b></a>.</p>
-			<p>Sincerely,</p>
-			<p>Webslesson.info</p>
+			<p>Para verificar tu correo electrónico, por favor clickea en este <a href="'.$object->base_url.'verify.php?code='.$patient_verification_code.'"><b>link</b></a>.</p>
+			<p>Saludos,</p>
+			<p>MiAgenda Unida</p>
 			';
 			$mail->Body = $message_body;
 
 			if($mail->Send())
 			{
-				$success = '<div class="alert alert-success">Please Check Your Email for email Verification</div>';
+				$success = '<div class="alert alert-success">Por favor, revisa tu correo para verificarlo!</div>';
 			}
 			else
 			{
@@ -138,18 +138,18 @@ if(isset($_POST["action"]))
 					}
 					else
 					{
-						$error = '<div class="alert alert-danger">Wrong Password</div>';
+						$error = '<div class="alert alert-danger">Contraseña errónea</div>';
 					}
 				}
 				else
 				{
-					$error = '<div class="alert alert-danger">Please first verify your email address</div>';
+					$error = '<div class="alert alert-danger">Por favor, primero verifica tu contraseña</div>';
 				}
 			}
 		}
 		else
 		{
-			$error = '<div class="alert alert-danger">Wrong Email Address</div>';
+			$error = '<div class="alert alert-danger">Dirección de correo errónea</div>';
 		}
 
 		$output = array(
@@ -240,7 +240,7 @@ if(isset($_POST["action"]))
 
 			$sub_array[] = '
 			<div align="center">
-			<button type="button" name="get_appointment" class="btn btn-primary btn-sm get_appointment" data-doctor_id="'.$row["doctor_id"].'" data-doctor_schedule_id="'.$row["doctor_schedule_id"].'">Get Appointment</button>
+			<button type="button" name="get_appointment" class="btn btn-primary btn-sm get_appointment" data-doctor_id="'.$row["doctor_id"].'" data-doctor_schedule_id="'.$row["doctor_schedule_id"].'">Obtener Cita</button>
 			</div>
 			';
 			$data[] = $sub_array;
@@ -284,7 +284,7 @@ if(isset($_POST["action"]))
 
 		$object->execute($data);
 
-		$_SESSION['success_message'] = '<div class="alert alert-success">Profile Data Updated</div>';
+		$_SESSION['success_message'] = '<div class="alert alert-success">Información del perfil actualizada</div>';
 
 		echo 'done';
 	}
@@ -308,7 +308,7 @@ if(isset($_POST["action"]))
 		$doctor_schedule_data = $object->get_result();
 
 		$html = '
-		<h4 class="text-center">Patient Details</h4>
+		<h4 class="text-center">Detalles del paciente</h4>
 		<table class="table">
 		';
 
@@ -316,15 +316,15 @@ if(isset($_POST["action"]))
 		{
 			$html .= '
 			<tr>
-				<th width="40%" class="text-right">Patient Name</th>
+				<th width="40%" class="text-right">Nombre del paciente</th>
 				<td>'.$patient_row["patient_first_name"].' '.$patient_row["patient_last_name"].'</td>
 			</tr>
 			<tr>
-				<th width="40%" class="text-right">Contact No.</th>
+				<th width="40%" class="text-right">Nro. de Contacto</th>
 				<td>'.$patient_row["patient_phone_no"].'</td>
 			</tr>
 			<tr>
-				<th width="40%" class="text-right">Address</th>
+				<th width="40%" class="text-right">Dirección</th>
 				<td>'.$patient_row["patient_address"].'</td>
 			</tr>
 			';
@@ -333,26 +333,26 @@ if(isset($_POST["action"]))
 		$html .= '
 		</table>
 		<hr />
-		<h4 class="text-center">Appointment Details</h4>
+		<h4 class="text-center">Detalles de la cita</h4>
 		<table class="table">
 		';
 		foreach($doctor_schedule_data as $doctor_schedule_row)
 		{
 			$html .= '
 			<tr>
-				<th width="40%" class="text-right">Doctor Name</th>
+				<th width="40%" class="text-right">Nombre del doctor</th>
 				<td>'.$doctor_schedule_row["doctor_name"].'</td>
 			</tr>
 			<tr>
-				<th width="40%" class="text-right">Appointment Date</th>
+				<th width="40%" class="text-right">Fecha de la cita</th>
 				<td>'.$doctor_schedule_row["doctor_schedule_date"].'</td>
 			</tr>
 			<tr>
-				<th width="40%" class="text-right">Appointment Day</th>
+				<th width="40%" class="text-right">Día de la cita</th>
 				<td>'.$doctor_schedule_row["doctor_schedule_day"].'</td>
 			</tr>
 			<tr>
-				<th width="40%" class="text-right">Available Time</th>
+				<th width="40%" class="text-right">Tiempo disponible</th>
 				<td>'.$doctor_schedule_row["doctor_schedule_start_time"].' - '.$doctor_schedule_row["doctor_schedule_end_time"].'</td>
 			</tr>
 			';
@@ -381,7 +381,7 @@ if(isset($_POST["action"]))
 
 		if($object->row_count() > 0)
 		{
-			$error = '<div class="alert alert-danger">You have already applied for appointment for this day, try for other day.</div>';
+			$error = '<div class="alert alert-danger">Ya has aplicado a una cita para este día, intenta con otro día.</div>';
 		}
 		else
 		{
@@ -421,7 +421,7 @@ if(isset($_POST["action"]))
 
 			$total_appointment_minute_use = $total_appointment * $average_consulting_time;
 
-			$appointment_time = date("H:i", strtotime('+'.$total_appointment_minute_use.' minutes', $start_time));
+			$appointment_time = date("H:i", strtotime('+'.$total_appointment_minute_use.' minutos', $start_time));
 
 			$status = '';
 
@@ -429,11 +429,11 @@ if(isset($_POST["action"]))
 
 			if(strtotime($end_time) > strtotime($appointment_time . ':00'))
 			{
-				$status = 'Booked';
+				$status = 'Reservado';
 			}
 			else
 			{
-				$status = 'Waiting';
+				$status = 'En espera';
 			}
 			
 			$data = array(
@@ -443,7 +443,7 @@ if(isset($_POST["action"]))
 				':appointment_number'		=>	$appointment_number,
 				':reason_for_appointment'	=>	$_POST['reason_for_appointment'],
 				':appointment_time'			=>	$appointment_time,
-				':status'					=>	'Booked'
+				':status'					=>	'Reservado'
 			);
 
 			$object->query = "
@@ -454,7 +454,7 @@ if(isset($_POST["action"]))
 
 			$object->execute($data);
 
-			$_SESSION['appointment_message'] = '<div class="alert alert-success">Your Appointment has been <b>'.$status.'</b> with Appointment No. <b>'.$appointment_number.'</b></div>';
+			$_SESSION['appointment_message'] = '<div class="alert alert-success">Tu cita está en estado <b>'.$status.'</b> de número: <b>'.$appointment_number.'</b></div>';
 		}
 		echo json_encode(['error' => $error]);
 		
@@ -581,7 +581,7 @@ if(isset($_POST["action"]))
 	if($_POST['action'] == 'cancel_appointment')
 	{
 		$data = array(
-			':status'			=>	'Cancel',
+			':status'			=>	'Cancelada',
 			':appointment_id'	=>	$_POST['appointment_id']
 		);
 		$object->query = "
@@ -590,7 +590,7 @@ if(isset($_POST["action"]))
 		WHERE appointment_id = :appointment_id
 		";
 		$object->execute($data);
-		echo '<div class="alert alert-success">Your Appointment has been Cancel</div>';
+		echo '<div class="alert alert-success">Tu cita ha sido cancelada</div>';
 	}
 }
 

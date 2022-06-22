@@ -18,7 +18,7 @@ if(isset($_GET["code"]))
 
 	$object->execute();
 
-	$_SESSION['success_message'] = '<div class="alert alert-success">You Email has been verify, now you can login into system</div>';
+	$_SESSION['success_message'] = '<div class="alert alert-success">Tu correo ha sido verificado, puede iniciar sesión en el sistema!</div>';
 
 	header('location:login.php');
 }

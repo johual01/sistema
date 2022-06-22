@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<title>Doctor Appointment Management System in PHP</title>
+		<title>MiAgenda Unida</title>
 
 	    <!-- Custom styles for this page -->
 	    <link href="vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
@@ -28,21 +28,17 @@
 	<body>
 		<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
 			<div class="col">
-		    	<h5 class="my-0 mr-md-auto font-weight-normal">Webslesson</h5>
+		    	<h5 class="my-0 mr-md-auto font-weight-normal">UNIDA</h5>
 		    </div>
 		    <?php
 		    if(!isset($_SESSION['patient_id']))
 		    {
 		    ?>
-		    <div class="col text-right"><a href="login.php">Login</a></div>
+		    <div class="col text-right"><a href="login.php">Iniciar Sesión</a></div>
 		   	<?php
 		   	}
 		   	?>
 		    
-	    </div>
-
-	    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-	      	<h1 class="display-4">Online Doctor Appointment Management System</h1>
 	    </div>
 	    <br />
 	    <br />

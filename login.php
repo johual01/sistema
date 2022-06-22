@@ -22,24 +22,24 @@ $object = new Appointment;
 			?>
 			<span id="message"></span>
 			<div class="card">
-				<div class="card-header">Login</div>
+				<div class="card-header">Iniciar Sesión - Pacientes</div>
 				<div class="card-body">
 					<form method="post" id="patient_login_form">
 						<div class="form-group">
-							<label>Patient Email Address</label>
+							<label>Dirección de correo</label>
 							<input type="text" name="patient_email_address" id="patient_email_address" class="form-control" required autofocus data-parsley-type="email" data-parsley-trigger="keyup" />
 						</div>
 						<div class="form-group">
-							<label>Patien Password</label>
+							<label>Contraseña</label>
 							<input type="password" name="patient_password" id="patient_password" class="form-control" required  data-parsley-trigger="keyup" />
 						</div>
 						<div class="form-group text-center">
 							<input type="hidden" name="action" value="patient_login" />
-							<input type="submit" name="patient_login_button" id="patient_login_button" class="btn btn-primary" value="Login" />
+							<input type="submit" name="patient_login_button" id="patient_login_button" class="btn btn-primary" value="Iniciar Sesión" />
 						</div>
 
 						<div class="form-group text-center">
-							<p><a href="register.php">Register</a></p>
+							<p><a href="register.php">Registrarse</a></p>
 						</div>
 					</form>
 				</div>

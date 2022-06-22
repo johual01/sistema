@@ -28,18 +28,18 @@ include('header.php');
 ?>
 		      	<div class="card">
 		      		<form method="post" action="result.php">
-			      		<div class="card-header"><h3><b>Doctor Schedule List</b></h3></div>
+			      		<div class="card-header"><h3><b>Lista de cronogramas de doctores</b></h3></div>
 			      		<div class="card-body">
 		      				<div class="table-responsive">
 		      					<table class="table table-striped table-bordered">
 		      						<tr>
-		      							<th>Doctor Name</th>
-		      							<th>Education</th>
-		      							<th>Speciality</th>
-		      							<th>Appointment Date</th>
-		      							<th>Appointment Day</th>
-		      							<th>Available Time</th>
-		      							<th>Action</th>
+		      							<th>Nombre del doctor</th>
+		      							<th>Grado</th>
+		      							<th>Especialidad</th>
+		      							<th>Fecha de la cita</th>
+		      							<th>Día de la cita</th>
+		      							<th>Tiempo disponible</th>
+		      							<th>Acción</th>
 		      						</tr>
 		      						<?php
 		      						foreach($result as $row)
@@ -52,7 +52,7 @@ include('header.php');
 		      								<td>'.$row["doctor_schedule_date"].'</td>
 		      								<td>'.$row["doctor_schedule_day"].'</td>
 		      								<td>'.$row["doctor_schedule_start_time"].' - '.$row["doctor_schedule_end_time"].'</td>
-		      								<td><button type="button" name="get_appointment" class="btn btn-primary btn-sm get_appointment" data-id="'.$row["doctor_schedule_id"].'">Get Appointment</button></td>
+		      								<td><button type="button" name="get_appointment" class="btn btn-primary btn-sm get_appointment" data-id="'.$row["doctor_schedule_id"].'">Programar una cita</button></td>
 		      							</tr>
 		      							';
 		      						}
